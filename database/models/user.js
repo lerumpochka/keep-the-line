@@ -11,9 +11,10 @@ const initUser = (sequelize, DataTypes) => {
      */
     static associate(models) {
       //owner assoc
-      // User.hasMany(models.Task)
+      User.hasMany(models.Task)
       // //keeper can book many tasks
-      // User.belongsTo(models.Task, {through: models.Booking})
+      User.belongsToMany(models.Task, {through: models.Booking})
+      
     }
   }
   User.init({

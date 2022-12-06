@@ -10,8 +10,8 @@ const initBooking = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      // Booking.belongsTo(models.Task)
-      // Booking.belongsTo(models.User)
+      Booking.belongsTo(models.Task, { foreignKey: 'UserId' })
+      Booking.belongsTo(models.User)
 
     }
   }

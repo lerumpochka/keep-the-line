@@ -11,9 +11,9 @@ const initTask= (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      // Task.hasMany(models.User)
+      Task.belongsTo(models.User)
       // //one task can be booked by only one user
-      // Task.belongsTo(models.User, {through: models.Booking})
+      Task.belongsToMany(models.User, {through: models.Booking})
 
     }
   }
