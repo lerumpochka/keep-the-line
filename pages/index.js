@@ -1,4 +1,5 @@
 import { getSession } from "next-auth/react"
+import db from "../database"
 
 export default function Home(props) {
 
