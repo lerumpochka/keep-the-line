@@ -12,14 +12,11 @@ const authOptions = {
       },
       async authorize(credentials, req) {
         //to add in DB
-        // const user = await db.User.create({
-        //   name: credentials.username,
-        //   password: credentials.password,
-        // })
-        const user = {
-            name: credentials.username,
-            password: credentials.password,
-        }
+        const user = await db.User.create({
+          name: credentials.username,
+          password: credentials.password,
+          
+        })
         if(user) {
           return user
         } else {
