@@ -1,19 +1,15 @@
-import { getSession } from "next-auth/react";
-import Header from "../components/Header";
-import HomePage from "../components/Home/HomePage";
-// import Login from "./login";
+import React from "react";
+import Link from "next/link";
+import styles from "../../styles/HomePage.module.css";
 
-export default function Home(props) {
+function HomePage() {
   return (
-    <div>
+    <div className={styles.homepage__contianer}>
       <h1>Home page</h1>
       <Link href="/login">login page</Link>
       <br />
       <br />
       <Link href="/profile">Profile page</Link>
-      <br />
-      <br />
-      <Link href="/tasks">All tasks around</Link>
       <br />
       <br />
       <Link href="/tasks/12">task details page</Link>
@@ -36,9 +32,4 @@ export default function Home(props) {
   );
 }
 
-export async function getServerSideProps(req, res) {
-  const session = await getSession(req);
-  return {
-    props: { currentUser: session },
-  };
-}
+export default HomePage;
