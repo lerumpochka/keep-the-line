@@ -15,7 +15,6 @@ const authOptions = {
         const user = await db.User.create({
           name: credentials.username,
           password: credentials.password,
-          
         })
         if(user) {
           return user
