@@ -5,7 +5,7 @@ import db from "../../database"
 
 function AllTasks(props) {
     const tasks = props.tasks
-    console.log(tasks);
+    
     return (
         <div>
             <h1>page to see all tasks around</h1>
