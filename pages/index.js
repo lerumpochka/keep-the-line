@@ -12,6 +12,9 @@ export default function Home(props) {
       <Link href="/profile">Profile page</Link>
       <br />
       <br />
+      <Link href="/tasks">All tasks around</Link>
+      <br />
+      <br />
       <Link href="/tasks/12">task details page</Link>
       <br />
       <br />
