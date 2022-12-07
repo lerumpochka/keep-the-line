@@ -1,14 +1,22 @@
 import { useRouter } from "next/router";
 import React from "react";
+import db from "../../database";
 
-function Task() {
-  const router = useRouter();
-  const { id } = router.query;
+function Task(props) {
+ const task = props.task
   return (
     <div>
-      <h1>This the task with id {id}</h1>
+      <h1>This the {task.title} in {task.adress} with id {task.id}</h1>
     </div>
   );
+}
+
+export async function getServerSideProps(req, res) {
+  const id = req.query.id
+  const task = JSON.parse(JSON.stringify(await db.Task.findByPk(id)))
+  return {
+      props: { task }
+  }
 }
 
 export default Task;
