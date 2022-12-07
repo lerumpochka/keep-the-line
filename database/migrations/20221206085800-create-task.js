@@ -15,7 +15,7 @@ module.exports = {
       description: {
         type: Sequelize.STRING
       },
-      adress: {
+      address: {
         type: Sequelize.STRING
       },
       amount: {

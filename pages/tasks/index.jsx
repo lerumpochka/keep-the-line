@@ -11,7 +11,7 @@ function AllTasks(props) {
             <h1>page to see all tasks around</h1>
             {tasks.map(task =>
             (<li key={task.id}>
-                <Link href={`/tasks/${task.id}`}>{task.title} at {task.time}  in {task.adress}</Link>
+                <Link href={`/tasks/${task.id}`}>{task.title} at {task.time}  in {task.address}</Link>
             </li>))}
 
         </div>
