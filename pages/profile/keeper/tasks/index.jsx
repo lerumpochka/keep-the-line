@@ -10,7 +10,7 @@ function KeeperTasks(props) {
   return (
     <div>
     All Keeper Tasks here
-    {tasks.map(task=><li key={task.id}><Link href={`/profile/keeper/tasks/${task.id}`}>{task.description} in {task.address}</Link></li>)}
+    {tasks.map(task=><li key={task.id}><Link href={`/profile/keeper/tasks/${task.id}`}>{task.title} in {task.address}</Link></li>)}
     <p> communication btns , ecc</p>
     </div>);
 }
