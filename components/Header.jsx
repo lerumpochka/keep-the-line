@@ -28,25 +28,22 @@ function Header() {
             />
             <ul>
               <li>
-                <Link href="/keeper/tasks">All Keeper tasks</Link>
+                <Link href="/keeper/tasks">All tasks around you</Link>
               </li>
               <li>
-                <Link href="/keeper/tasks/2">Keeper task details page</Link>
+                <Link href="/keeper/tasks/2">book a task</Link>
               </li>
               <li>
                 <Link href="/taker/tasks/new">Create new task-- form</Link>
               </li>
               <li>
-                <Link href="/taker/tasks">All taker Tasks</Link>
+                <Link href="/taker/tasks">All created tasks</Link>
               </li>
               <li>
-                <Link href="/taker/tasks/1">Taker task details page</Link>
+                <Link href="/taker/tasks/1">created task details page</Link>
               </li>
               <li>
-                <Link href="/keeper/tasks/booked">bookedTasks</Link>
-              </li>
-              <li>
-                <Link href="/taker/tasks/booked">tekenTasks</Link>
+                <Link href="/keeper/tasks/booked">booked Tasks</Link>
               </li>
             </ul>
           </div>
