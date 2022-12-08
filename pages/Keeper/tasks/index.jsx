@@ -1,7 +1,12 @@
 import React from "react";
+import TaskAroundKeeper from "../../../components/TasksAroundKeeper/TaskAroundKeeper";
 
 function KeeperTasks() {
-  return <div>All keeper tasks</div>;
+  return (
+    <div>
+      <TaskAroundKeeper />
+    </div>
+  );
 }
 
 export default KeeperTasks;

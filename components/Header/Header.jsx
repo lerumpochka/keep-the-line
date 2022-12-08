@@ -48,6 +48,12 @@ function Header() {
               <li>
                 <Link href="/Taker/tasks/32">Taker task details page</Link>{" "}
               </li>
+              <li>
+                <Link href="/Keeper/tasks/keptTasks">keptTasks</Link>
+              </li>
+              <li>
+                <Link href="/Taker/tasks/takenTasks">keptTasks</Link>
+              </li>
             </ul>
           </div>
         </Fade>
