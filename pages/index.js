@@ -1,3 +1,4 @@
+
 import { getSession, signIn, signOut } from "next-auth/react";
 import Header from "../components/Header";
 import HomePage from "../components/Home/HomePage";
@@ -5,6 +6,12 @@ import HomePage from "../components/Home/HomePage";
 // import Login from "./login";
 
 export default function Home(props) {
+  return (
+    <div>
+      <Header />
+      <HomePage />
+    </div>
+  );
   const session = props.currentUser
 
   if (session) {
