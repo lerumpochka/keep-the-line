@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/globals.css";
 import { useMediaQuery } from "@mui/material";
 import Oops from "../components/Oops/Oops";
+import Header from "../components/Header";
 
 // import { SessionProvider } from "next-auth/react";
 // import Navbar from '../components/navbar';
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps: { ...pageProps } }) {
         <Oops />
       ) : (
         <>
+          <Header />
           <Component {...pageProps} />
         </>
       )}
