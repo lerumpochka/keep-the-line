@@ -10,12 +10,19 @@ function KeeperTasks(props) {
   return (
     <div>
     All Keeper Tasks here
-    {tasks.map(task=><li key={task.id}><Link href={`/profile/keeper/tasks/${task.id}`}>{task.description} in {task.address}</Link></li>)}
+    {tasks.map(task=><li key={task.id}><Link href={`/profile/keeper/tasks/${task.id}`}>{task.title} in {task.address}</Link></li>)}
     <p> communication btns , ecc</p>
     </div>);
 }
 export async function getServerSideProps(req, res) {
   const session = await getSession(req);
+  if(!session) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: '/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2F'}
+    }
+  }
   const userName = session.user.name
   const user = JSON.parse(JSON.stringify(await db.User.findOne({where: {name: userName }})))
   // const userId = user.id
