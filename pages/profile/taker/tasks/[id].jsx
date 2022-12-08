@@ -8,7 +8,7 @@ const task = props.task
   return (
     <div>
       <h1>TakerTaskDetails page {task.id}</h1>
-      <p>task info: {task.title}, where: {task.adress}</p>
+      <p>task info: {task.title}, where: {task.address}</p>
       <p>here should be communication btns, ecc</p>
     </div>
   );
