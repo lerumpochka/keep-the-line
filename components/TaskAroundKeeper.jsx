@@ -1,17 +1,15 @@
-import React from "react";
+import styles from "../styles/TaskAroundKeeper.module.css";
+import TaskCard from "./TaskCard";
 
-const style = {
-  height: "100vh",
-  width: "100%",
-  display: "flex",
-  justifyContent: "center",
-  alitItems: "center",
-  flexDirection: "column",
-};
 function TaskAroundKeeper(props) {
   return (
-    <div style={style}>
-      <h1>Task around you</h1>
+    <div className={styles.container}>
+      <div className={styles.h1__con}>
+        <h1>Tasks around you</h1>
+      </div>
+      <div className={styles.tasks__con}>
+        <TaskCard />
+      </div>
     </div>
   );
 }
