@@ -20,7 +20,7 @@ const initTask= (sequelize, DataTypes) => {
   Task.init({
     title: DataTypes.STRING,
     description: DataTypes.STRING,
-    adress: DataTypes.STRING,
+    address: DataTypes.STRING,
     amount: DataTypes.INTEGER,
     UserId: DataTypes.INTEGER,
     date: DataTypes.DATEONLY,

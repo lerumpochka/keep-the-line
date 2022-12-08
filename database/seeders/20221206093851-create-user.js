@@ -7,7 +7,7 @@ module.exports = {
      await queryInterface.bulkInsert('Tasks', [{
         title: 'first task',
         description: 'my first task description',
-        adress: 'via Roma, 26',
+        address: 'via Roma, 26',
         UserId: 2,
         amount: 5,
         date: new Date('2022 December 10'),
@@ -20,16 +20,26 @@ module.exports = {
      {
       title: 'second task',
       description: 'my second task description',
-      adress: 'via Venetto, 10',
+      address: 'via Venetto, 10',
       UserId: 1,
       amount: 5,
       date: new Date('2022 December 20'),
       time: new Date('2022 December 20'),
       createdAt: new Date(),
       updatedAt: new Date()
-
-
-   }], {});
+   },
+   {
+      title: 'anagrafe',
+      description: ' description ',
+      address: 'via Mateotti, 14',
+      UserId: 1,
+      amount: 6,
+      date: new Date('2022 December 20'),
+      time: new Date('2022 December 20'),
+      createdAt: new Date(),
+      updatedAt: new Date()
+   },
+   ], {});
     
   },
 
