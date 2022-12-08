@@ -34,25 +34,25 @@ function Header() {
                 <Link href="/tasks/12">task details page</Link>
               </li>
               <li>
-                <Link href="/Keeper/tasks">All Keeper tasks</Link>
+                <Link href="/keeper/tasks">All Keeper tasks</Link>
               </li>
               <li>
-                <Link href="/Keeper/tasks/34">Keeper task details page</Link>
+                <Link href="/keeper/tasks/34">Keeper task details page</Link>
               </li>
               <li>
                 <Link href="/tasks/new">Create new task-- form</Link>
               </li>
               <li>
-                <Link href="/Taker/tasks">All taker Tasks</Link>
+                <Link href="/taker/tasks">All taker Tasks</Link>
               </li>
               <li>
-                <Link href="/Taker/tasks/32">Taker task details page</Link>{" "}
+                <Link href="/taker/tasks/32">Taker task details page</Link>{" "}
               </li>
               <li>
-                <Link href="/Keeper/tasks/keptTasks">keptTasks</Link>
+                <Link href="/keeper/tasks/bookedTasks">bookedTasks</Link>
               </li>
               <li>
-                <Link href="/Taker/tasks/takenTasks">keptTasks</Link>
+                <Link href="/taker/tasks/takenTasks">bookedTasks</Link>
               </li>
             </ul>
           </div>

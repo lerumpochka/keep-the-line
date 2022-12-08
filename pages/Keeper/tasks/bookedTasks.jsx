@@ -4,7 +4,7 @@ import React from "react";
 // import db from "../../../../database";
 import db from "../../../database";
 
-function KeptTasks(props) {
+function bookedTasks(props) {
   const bookings = props.bookings;
   const tasks = bookings.map((booking) => booking.Task);
   console.log("tasks from booking", tasks);
@@ -44,4 +44,4 @@ export async function getServerSideProps(req, res) {
   };
 }
 
-export default KeptTasks;
+export default bookedTasks;
