@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import styles from "../../styles/HomePage.module.css";
+import styles from "../styles/HomePage.module.css";
 
 function HomePage() {
   return (
@@ -11,8 +11,8 @@ function HomePage() {
         </div>
         <div>
           <div className={styles.buttons__con}>
-            <Link href="/Keeper/tasks">Keep a spot</Link>
-            <Link href="/Taker/tasks">Take a spot</Link>
+            <Link href="/keeper/tasks">Keep a spot</Link>
+            <Link href="/taker/tasks">Take a spot</Link>
           </div>
         </div>
       </div>

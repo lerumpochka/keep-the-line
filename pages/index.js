@@ -1,6 +1,6 @@
 import { getSession, signIn, signOut } from "next-auth/react";
 import Header from "../components/Header";
-import HomePage from "../components/Home/HomePage";
+import HomePage from "../components/HomePage";
 
 // import Login from "./login";
 

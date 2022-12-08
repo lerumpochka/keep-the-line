@@ -1,5 +1,5 @@
 import React from "react";
-import TaskAroundKeeper from "../../../components/TasksAroundKeeper/TaskAroundKeeper";
+import TaskAroundKeeper from "../../../components/TaskAroundKeeper";
 
 function KeeperTasks() {
   return (

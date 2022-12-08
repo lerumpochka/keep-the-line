@@ -1,16 +1,17 @@
 import { useRouter } from "next/router";
 import React from "react";
-import db from "../../database";
+import db from "../../../../database";
 
-function Task(props) {
- const task = props.task
+function KeeperTaskDetails(props) {
+  const task = props.task
   return (
     <div>
-      <h1>This the {task.title} in {task.address} with id {task.id}</h1>
+      <h1>Keeper Task Details page {task.id}</h1>
+      <p>task info: {task.title}, where: {task.address}</p>
+      <p>here should be communication btns, ecc</p>
     </div>
   );
 }
-
 export async function getServerSideProps(req, res) {
   const id = req.query.id
   const task = JSON.parse(JSON.stringify(await db.Task.findByPk(id)))
@@ -19,4 +20,4 @@ export async function getServerSideProps(req, res) {
   }
 }
 
-export default Task;
+export default KeeperTaskDetails;

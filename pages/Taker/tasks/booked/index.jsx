@@ -1,7 +1,7 @@
 import React from "react";
 import { getSession } from "next-auth/react";
 import Link from "next/link";
-import db from "../../../database";
+import db from "../../../../database";
 
 function TakenTasks(props) {
   const tasks = props.tasks;

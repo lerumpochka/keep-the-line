@@ -2,7 +2,7 @@ import { getSession } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
 // import db from "../../../../database";
-import db from "../../../database";
+import db from "../../../../database";
 
 function bookedTasks(props) {
   const bookings = props.bookings;
