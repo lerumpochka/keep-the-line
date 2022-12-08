@@ -14,6 +14,7 @@
   padding: 0 10px;
   transition: all 250ms;
   z-index: 1000;
+  box-shadow: rgba(0, 0, 0, 0.425) 0px 2px 4px 1px;
 }
 
 .navbar > .navbar__child {
@@ -41,7 +42,7 @@
 .menu__content > ul {
   list-style: none;
   padding: 20px;
-  text-align: center;
+  text-align: left;
 }
 .menu__content > ul > li {
   border-bottom: 1px solid rgba(100, 100, 100, 0.385);

@@ -20,22 +20,14 @@ const authOptions = {
 
         //check password if created===false
         if (!created && user.password === credentials.password) {
-          console.log('---pass ok');
+          return user
+        } else if(created) { 
+          return user
         } else { 
-          console.log('wrong pass')
-          // return 
-            // redirect: {
-            //   permanent: false,
-            //   destination: `login`
-            // }
+          return null
           }
         
 
-        if(user) {
-          return user
-        } else {
-          return null
-        }
       },
     }),
   ],
