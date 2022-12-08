@@ -1,4 +1,4 @@
-import styles from "../../styles/Header.module.css";
+import styles from "../styles/Header.module.css";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
@@ -28,25 +28,22 @@ function Header() {
             />
             <ul>
               <li>
-                <Link href="/login">login page</Link>
+                <Link href="/keeper/tasks">All tasks around you</Link>
               </li>
               <li>
-                <Link href="/tasks/12">task details page</Link>
+                <Link href="/keeper/tasks/2">book a task</Link>
               </li>
               <li>
-                <Link href="/Keeper/tasks">All Keeper tasks</Link>
+                <Link href="/taker/tasks/new">Create new task-- form</Link>
               </li>
               <li>
-                <Link href="/Keeper/tasks/34">Keeper task details page</Link>
+                <Link href="/taker/tasks">All created tasks</Link>
               </li>
               <li>
-                <Link href="/tasks/new">Create new task-- form</Link>
+                <Link href="/taker/tasks/1">created task details page</Link>
               </li>
               <li>
-                <Link href="/Taker/tasks">All taker Tasks</Link>
-              </li>
-              <li>
-                <Link href="/Taker/tasks/32">Taker task details page</Link>{" "}
+                <Link href="/keeper/tasks/booked">booked Tasks</Link>
               </li>
             </ul>
           </div>
