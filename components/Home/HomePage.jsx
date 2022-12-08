@@ -4,30 +4,18 @@ import styles from "../../styles/HomePage.module.css";
 
 function HomePage() {
   return (
-    <div className={styles.homepage__contianer}>
-      <h1>Home page</h1>
-      <Link href="/login">login page</Link>
-      <br />
-      <br />
-      <Link href="/profile">Profile page</Link>
-      <br />
-      <br />
-      <Link href="/tasks/12">task details page</Link>
-      <br />
-      <br />
-      <Link href="/profile/keeper/tasks">All Keeper tasks</Link>
-      <br />
-      <br />
-      <Link href="/profile/keeper/tasks/34">Keeper task details page</Link>
-      <br />
-      <br />
-      <Link href="/tasks/new">Create new task-- form</Link>
-      <br />
-      <br />
-      <Link href="/profile/taker/tasks">All taker Tasks</Link>
-      <br />
-      <br />
-      <Link href="/profile/taker/tasks/32">Taker task details page</Link>
+    <div className={styles.homepage}>
+      <div className={styles.homepage__container}>
+        <div className={styles.text__con}>
+          <h2>Welcome!</h2>
+        </div>
+        <div>
+          <div className={styles.buttons__con}>
+            <Link href="/Keeper/tasks">Keep a spot</Link>
+            <Link href="/Taker/tasks">Take a spot</Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

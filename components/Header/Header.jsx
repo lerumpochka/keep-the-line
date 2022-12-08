@@ -1,8 +1,9 @@
-import styles from "../styles/Header.module.css";
+import styles from "../../styles/Header.module.css";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import Fade from "react-reveal/Fade";
+import Link from "next/link";
 
 function Header() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -27,19 +28,25 @@ function Header() {
             />
             <ul>
               <li>
-                <a href="#">item 1</a>
+                <Link href="/login">login page</Link>
               </li>
               <li>
-                <a href="#">item 2</a>
+                <Link href="/tasks/12">task details page</Link>
               </li>
               <li>
-                <a href="#">item 3</a>
+                <Link href="/Keeper/tasks">All Keeper tasks</Link>
               </li>
               <li>
-                <a href="#">item 4</a>
+                <Link href="/Keeper/tasks/34">Keeper task details page</Link>
               </li>
               <li>
-                <a href="#">item 5</a>
+                <Link href="/tasks/new">Create new task-- form</Link>
+              </li>
+              <li>
+                <Link href="/Taker/tasks">All taker Tasks</Link>
+              </li>
+              <li>
+                <Link href="/Taker/tasks/32">Taker task details page</Link>{" "}
               </li>
             </ul>
           </div>
@@ -59,4 +66,30 @@ export default Header;
     <button onClick={() => signIn()}>Sign in</button>
   )}
 </div>; */
+}
+
+{
+  /* <h1>Home page</h1>
+      
+      <br />
+      <br />
+      <Link href="/profile">Profile page</Link>
+      <br />
+      <br />
+      <Link href="/tasks/12">task details page</Link>
+      <br />
+      <br />
+      <Link href="/profile/keeper/tasks">All Keeper tasks</Link>
+      <br />
+      <br />
+      <Link href="/profile/keeper/tasks/34">Keeper task details page</Link>
+      <br />
+      <br />
+      <Link href="/tasks/new">Create new task-- form</Link>
+      <br />
+      <br />
+      <Link href="/profile/taker/tasks">All taker Tasks</Link>
+      <br />
+      <br />
+      <Link href="/profile/taker/tasks/32">Taker task details page</Link> */
 }
