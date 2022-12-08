@@ -6,7 +6,7 @@ function Task(props) {
  const task = props.task
   return (
     <div>
-      <h1>This the {task.title} in {task.adress} with id {task.id}</h1>
+      <h1>This the {task.title} in {task.address} with id {task.id}</h1>
     </div>
   );
 }
