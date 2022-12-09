@@ -7,13 +7,12 @@ import db from "../../../../database";
 function bookedTasks(props) {
   const bookings = props.bookings;
   const tasks = bookings.map((booking) => booking.Task);
-  console.log("tasks from booking", tasks);
   return (
     <div>
       All Keeper Tasks here
       {tasks.map((task) => (
         <li key={task.id}>
-          <Link href={`/profile/keeper/tasks/${task.id}`}>
+          <Link href={`/keeper/tasks/booked/${task.id}`}>
             {task.name} in {task.address}
           </Link>
         </li>
