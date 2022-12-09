@@ -56,7 +56,7 @@ function Header() {
 export default Header;
 
 {
-  /* <div>
+  /*<div>
   {props.user ? (
     <button onClick={() => signOut()}>Sign out</button>
   ) : (
