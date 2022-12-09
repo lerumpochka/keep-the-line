@@ -16,6 +16,11 @@ const initBooking = (sequelize, DataTypes) => {
     }
   }
   Booking.init({
+    id:  {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
     UserId: DataTypes.INTEGER,
     TaskId: DataTypes.INTEGER,
     statusArrival: DataTypes.BOOLEAN,
