@@ -8,7 +8,7 @@ function KeeperTaskDetails(props) {
   const task = props.task;
   return (
     <div>
-      <h1>Keeper Task Details page {task.id}</h1>
+      <h1>Keeper Task Details page (progress) {task.id}</h1>
       <p>
         task info: {task.title}, where: {task.address}
       </p>

@@ -9,38 +9,36 @@ function bookedTasks(props) {
   const tasks = bookings.map((booking) => booking.Task);
   return (
     <div>
-      All Keeper Tasks here
+      <h1>All Keeper Tasks here (Booked)</h1>
       {tasks.map((task) => (
         <li key={task.id}>
           <Link href={`/keeper/tasks/booked/${task.id}`}>
-            {task.name} in {task.address}
+            {task.title} in {task.address}
           </Link>
         </li>
       ))}
-      <p> communication btns , ecc</p>
+      
     </div>
   );
 }
 export async function getServerSideProps(req, res) {
-  const session = await getSession(req);
-  if (!session) {
+    const session = await getSession(req);
+    if (!session) {
+      return {
+        redirect: {
+          permanent: false,
+          destination: "/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2F",
+        },
+      };
+    }
+    const userName = session.user.name;
+    const user = JSON.parse(JSON.stringify(await db.User.findOne({ where: { name: userName } })));
+    const userId = user.id
+    const bookings = JSON.parse(JSON.stringify(await db.Booking.findAll({ where: { UserId: userId }, include: "Task" })));
+
     return {
-      redirect: {
-        permanent: false,
-        destination: "/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2F",
-      },
+      props: { bookings },
     };
-  }
-  const userName = session.user.name;
-  const user = JSON.parse(JSON.stringify(await db.User.findOne({ where: { name: userName } })));
-  // const userId = user.id
-  const userId = 2;
-  const bookings = JSON.parse(
-    JSON.stringify(await db.Booking.findAll({ where: { UserId: userId }, include: "Task" }))
-  );
-  return {
-    props: { bookings },
-  };
 }
 
 export default bookedTasks;
