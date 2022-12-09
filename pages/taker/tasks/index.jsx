@@ -29,8 +29,8 @@ export async function getServerSideProps(req, res) {
 
   const userEmail = session.user.email;
   const user = JSON.parse(JSON.stringify(await db.User.findOne({ where: { email: userEmail } })));
-  // const userId = user.id;
-  const userId = 1;
+  const userId = user.id;
+ 
 
   const tasks = JSON.parse(JSON.stringify(await db.Task.findAll({ where: { UserId: userId } })));
 

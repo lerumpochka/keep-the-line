@@ -5,6 +5,7 @@ import { getSession } from "next-auth/react";
 import db from "../../../database";
 
 
+
 function KeeperTasks(props) {
   const tasks = props.tasks;
   return (
@@ -14,6 +15,8 @@ function KeeperTasks(props) {
     </div>
   );
 }
+
+
 export async function getServerSideProps(req, res) {
   const session = await getSession(req);
   if (!session) {

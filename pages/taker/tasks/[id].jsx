@@ -5,6 +5,7 @@ import db from "../../../database";
 import { getSession } from "next-auth/react";
 
 
+
 function TakerTaskDetails(props) {
   const task = props.task;
   return (
