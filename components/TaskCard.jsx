@@ -3,7 +3,7 @@ import styles from "../styles/TaskCard.module.css";
 
 function TaskCard(props) {
   return (
-    <Link className={styles.link} href="/keeper/tasks/1">
+    <Link className={styles.link} href={`/keeper/tasks/${props.id}`}>
       <div className={styles.container}>
         <h2>{props.title}</h2>
         <p>{props.address}</p>
