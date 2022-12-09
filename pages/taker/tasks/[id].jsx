@@ -1,6 +1,7 @@
 
 
 import React from "react";
+import Progress from "../../../components/Progress";
 import db from "../../../database";
 import { getSession } from "next-auth/react";
 
@@ -14,7 +15,9 @@ function TakerTaskDetails(props) {
       <p>
         task info: {task.title}, where: {task.address}
       </p>
-      <p>here should be communication btns, ecc</p>
+      <Progress />
+
+      <button>Cancel Task</button>
     </div>
   );
 }

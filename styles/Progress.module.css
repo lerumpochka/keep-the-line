@@ -1,0 +1,47 @@
+.container {
+  margin: 2rem 1rem;
+}
+
+.container > form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.input__con {
+  padding: 10px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .input__con > input[type="radio"] {
+  appearance: none;
+  color: #373f44;
+  width: 1.3em;
+  height: 1.3em;
+  border-radius: 50%;
+  background-color: white;
+  border: none;
+  margin: 5px;
+  border: 1px solid #373f44;
+}
+.input__con > input[type="radio"]:checked {
+  appearance: none;
+  color: #373f44;
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 50%;
+  background-color: #373f44;
+  outline: 2px solid white;
+} */
+
+.status__con {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.status {
+  transition: all 250ms;
+  overflow: hidden;
+}
