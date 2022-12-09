@@ -5,18 +5,12 @@ import HomePage from "../components/HomePage";
 // import Login from "./login";
 
 export default function Home(props) {
-  return (
-    <div>
-      <HomePage />
-    </div>
-  );
   const session = props.currentUser;
+  
 
   if (session) {
     return (
       <div>
-        <Header />
-
         <HomePage />
         <button onClick={() => signOut()}>Sign out</button>
       </div>
@@ -24,7 +18,6 @@ export default function Home(props) {
   } else {
     return (
       <div>
-        <Header />
         <HomePage />
         <button onClick={() => signIn()}>Sign in</button>
       </div>
@@ -32,8 +25,18 @@ export default function Home(props) {
   }
 }
 
-export async function getServerSideProps(req, res) {
-  const session = await getSession(req);
+
+  export async function getServerSideProps(req, res) {
+    const session = await getSession(req);
+    if (!session) {
+      return {
+        redirect: {
+          permanent: false,
+          destination: "/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2F",
+        },
+      };
+    }
+
 
   return {
     props: { currentUser: session },
