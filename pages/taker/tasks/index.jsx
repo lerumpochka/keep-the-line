@@ -1,20 +1,18 @@
 import { getSession } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
+import TaskCard from "../../../components/TaskCard";
 import db from "../../../database";
 
 function TakerTasks(props) {
   const tasks = props.tasks;
   return (
     <div>
-      All TakerTasks (tasks that I have created)
+      <h1>Created Tasks</h1>
       {tasks.map((task) => (
-        <li key={task.id}>
-          <Link href={`/taker/tasks/${task.id}`}>
-            {task.title} in {task.address}
-          </Link>
-        </li>
-      ))}
+        <TaskCard key={task.id} id={task.id} title= {task.title} description= {task.description} 
+        address= {task.address} amount= {task.amount} date= {task.date} time= {task.time}/>
+        ))}
     </div>
   );
 }
@@ -32,7 +30,7 @@ export async function getServerSideProps(req, res) {
   const userEmail = session.user.email;
   const user = JSON.parse(JSON.stringify(await db.User.findOne({ where: { email: userEmail } })));
   // const userId = user.id;
-  const userId = 2;
+  const userId = 1;
 
   const tasks = JSON.parse(JSON.stringify(await db.Task.findAll({ where: { UserId: userId } })));
 
