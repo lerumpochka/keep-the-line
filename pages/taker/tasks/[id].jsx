@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import React from "react";
+import Progress from "../../../components/Progress";
 import db from "../../../database";
 
 function TakerTaskDetails(props) {
@@ -10,7 +11,9 @@ function TakerTaskDetails(props) {
       <p>
         task info: {task.title}, where: {task.address}
       </p>
-      <p>here should be communication btns, ecc</p>
+      <Progress />
+
+      <button>Cancel Task</button>
     </div>
   );
 }
