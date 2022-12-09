@@ -5,11 +5,13 @@ function TaskCard(props) {
   return (
     <Link className={styles.link} href="/keeper/tasks/1">
       <div className={styles.container}>
-        <h2>poste italiane</h2>
-        <p>Address: </p>
+        <h2>{props.title}</h2>
+        <p>{props.address}</p>
+        <p>{props.description}</p>
         <p>
-          at 12/12/2022<span>10:45 A.M</span>
+          {props.date}<span>{props.time}</span>
         </p>
+        <p>amount:{props.amount}$</p>
       </div>
     </Link>
   );

@@ -1,6 +1,6 @@
 import { getSession } from "next-auth/react";
 import React from "react";
-import db from "../../../database";
+//import db from "../../../database";
 
 
 function NewTask(props) {
@@ -49,7 +49,8 @@ export async function getServerSideProps(req, res) {
         destination: '/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2F'}
     }
   }
-  const user = JSON.parse(JSON.stringify(await db.User.findOne({where: {email: session.user.email}})))
+  //const user = JSON.parse(JSON.stringify(await db.User.findOne({where: {email: session.user.email}})))
+  const user = {id:1}
   return {
     props: { user, currentUser: session },
   };
