@@ -11,9 +11,9 @@ function TakerTaskDetails(props) {
   const task = props.task;
   return (
     <div>
-      <h1>Task Details{task.id}</h1>
+      <h1>Task Details:</h1>
       <p>
-        task info: {task.title}, where: {task.address}
+        task id: {task.id} task title: {task.title}, where: {task.address}
       </p>
       <Progress />
 
