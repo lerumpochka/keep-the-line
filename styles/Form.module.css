@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 90vw;
+  gap: 30px;
+}
+
+.form__con {
+  width: 90vw;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+}
+.input__con {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.input__con > label {
+  font-size: 18px;
+  font-weight: 400;
+}
+.input__con > input {
+  font-size: 18px;
+  width: 62%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #373f44;
+  transition: 250ms;
+}
+.input__con > input:focus {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #373f44;
+  transition: 250ms;
+}
+.input__con > input::placeholder {
+  font-size: 15px;
+  font-style: italic;
+}

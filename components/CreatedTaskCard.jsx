@@ -1,9 +1,9 @@
 import Link from "next/link";
 import styles from "../styles/TaskCard.module.css";
 
-function TaskCard(props) {
+function CreatedTaskCard(props) {
   return (
-    <Link className={styles.link} href={`/keeper/tasks/${props.id}`}>
+    <Link className={styles.link} href={`/taker/tasks/${props.id}`}>
       <div className={styles.container}>
         <h2>{props.title}</h2>
         <p>{props.address}</p>
@@ -17,4 +17,4 @@ function TaskCard(props) {
   );
 }
 
-export default TaskCard;
+export default CreatedTaskCard;

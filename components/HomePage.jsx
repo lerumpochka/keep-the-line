@@ -12,7 +12,7 @@ function HomePage() {
         <div>
           <div className={styles.buttons__con}>
             <Link href="/keeper/tasks">Keep a spot</Link>
-            <Link href="/taker/tasks">Take a spot</Link>
+            <Link href="/taker/tasks/new">Take a spot</Link>
           </div>
         </div>
       </div>

@@ -12,7 +12,7 @@ function Task(props) {
     <div>
       <h1>This the {task.title} in {task.address} with id {task.id}</h1>
       <form action="/api/bookings" method="POST">
-              <input hidden={true} type="text" name="UserId" id="UserId" defaultValue={1}/>
+              <input hidden={true} type="text" name="UserId" id="UserId" defaultValue={user.id}/>
               <input hidden={true} type="text" name="TaskId" id="TaskId" defaultValue={task.id} />
               <input hidden={true} type="text" name="statusArrival" id="statusArrival" defaultValue={false} />
               <input hidden={true} type="text" name="statusDone" id="statusDone" defaultValue={false} />

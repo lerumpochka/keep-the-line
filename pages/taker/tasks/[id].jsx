@@ -1,18 +1,19 @@
 
-import { getSession } from "next-auth/react";
+
 import React from "react";
 import Progress from "../../../components/Progress";
 import db from "../../../database";
 import { getSession } from "next-auth/react";
 
 
+
 function TakerTaskDetails(props) {
   const task = props.task;
   return (
     <div>
-      <h1>Task Details{task.id}</h1>
+      <h1> Task Details/Communication:</h1>
       <p>
-        task info: {task.title}, where: {task.address}
+        task id: {task.id} task title: {task.title}, where: {task.address}
       </p>
       <Progress />
 
