@@ -1,18 +1,22 @@
 
 import { getSession } from "next-auth/react";
 import React from "react";
+import Progress from "../../../components/Progress";
 import db from "../../../database";
+import { getSession } from "next-auth/react";
 
 
 function TakerTaskDetails(props) {
   const task = props.task;
   return (
     <div>
-      <h1>TakerTaskDetails page {task.id}</h1>
+      <h1>Task Details{task.id}</h1>
       <p>
         task info: {task.title}, where: {task.address}
       </p>
-      <p>here should be communication btns, ecc</p>
+      <Progress />
+
+      <button>Cancel Task</button>
     </div>
   );
 }
@@ -32,4 +36,14 @@ export async function getServerSideProps(req, res) {
     props: { task },
   };
 }
+
+
+
+
+
+
+
+
+
+
 export default TakerTaskDetails;
