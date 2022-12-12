@@ -4,6 +4,7 @@ import { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import Fade from "react-reveal/Fade";
 import Link from "next/link";
+import { signOut } from "next-auth/react";
 
 function Header() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -46,6 +47,9 @@ function Header() {
                 <Link href="/keeper/tasks/booked">booked Tasks</Link>
               </li>
             </ul>
+            <button className={styles.sign__out} onClick={() => signOut()}>
+              SignOut
+            </button>
           </div>
         </Fade>
       )}
