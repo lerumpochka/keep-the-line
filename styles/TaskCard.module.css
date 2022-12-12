@@ -8,6 +8,8 @@ a.link {
   border-radius: 8px;
   border: 2px solid white;
   text-align: center;
+  min-width: 90vw ;
+  margin: 20px;
 }
 .container > h2 {
   padding-bottom: 0.5rem;
