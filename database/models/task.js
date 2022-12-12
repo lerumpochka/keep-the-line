@@ -24,7 +24,8 @@ const initTask= (sequelize, DataTypes) => {
     amount: DataTypes.INTEGER,
     UserId: DataTypes.INTEGER,
     date: DataTypes.DATEONLY,
-    time: DataTypes.TIME
+    time: DataTypes.TIME,
+    progress: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Task',
