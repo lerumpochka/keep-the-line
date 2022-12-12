@@ -1,11 +1,10 @@
 import { getSession } from "next-auth/react";
 import React from "react";
-//import db from "../../../database";
-import styles from "../../../styles/Form.module.css";
+import db from "../../../database";
 
 function NewTask(props) {
   const user = props.user;
-  console.log("-------", user);
+
   return (
     <div>
       <div>
@@ -69,8 +68,10 @@ export async function getServerSideProps(req, res) {
       },
     };
   }
-  //const user = JSON.parse(JSON.stringify(await db.User.findOne({where: {email: session.user.email}})))
-  const user = { id: 1 };
+  const user = JSON.parse(
+    JSON.stringify(await db.User.findOne({ where: { email: session.user.email } }))
+  );
+
   return {
     props: { user, currentUser: session },
   };
