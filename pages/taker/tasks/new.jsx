@@ -1,6 +1,7 @@
 import { getSession } from "next-auth/react";
 import React from "react";
 import db from "../../../database";
+import styles from "../../../styles/Form.module.css";
 
 function NewTask(props) {
   const user = props.user;
