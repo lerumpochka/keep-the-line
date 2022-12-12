@@ -1,4 +1,5 @@
 import { getSession, signIn, signOut } from "next-auth/react";
+
 import Header from "../components/Header";
 import HomePage from "../components/HomePage";
 
@@ -10,26 +11,26 @@ export default function Home(props) {
       <HomePage />
     </div>
   );
-  const session = props.currentUser;
+  // const session = props.currentUser;
 
-  if (session) {
-    return (
-      <div>
-        <Header />
+  // if (session) {
+  //   return (
+  //     <div>
+  //       <Header />
 
-        <HomePage />
-        <button onClick={() => signOut()}>Sign out</button>
-      </div>
-    );
-  } else {
-    return (
-      <div>
-        <Header />
-        <HomePage />
-        <button onClick={() => signIn()}>Sign in</button>
-      </div>
-    );
-  }
+  //       <HomePage />
+  //       <button onClick={() => signOut()}>Sign out</button>
+  //     </div>
+  //   );
+  // } else {
+  //   return (
+  //     <div>
+  //       <Header />
+  //       <HomePage />
+  //       <button onClick={() => signIn()}>Sign in</button>
+  //     </div>
+  //   );
+  // }
 }
 
 export async function getServerSideProps(req, res) {
