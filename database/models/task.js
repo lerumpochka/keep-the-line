@@ -26,6 +26,7 @@ const initTask= (sequelize, DataTypes) => {
     date: DataTypes.DATEONLY,
     time: DataTypes.TIME,
     progress: DataTypes.INTEGER
+
   }, {
     sequelize,
     modelName: 'Task',
