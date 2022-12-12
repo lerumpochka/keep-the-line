@@ -1,11 +1,27 @@
 
 import { getSession } from "next-auth/react";
-import React from "react";
+import React, { useState } from "react";
 import db from "../../../../database";
 import Progress from "../../../../components/Progress";
 
 function KeeperTaskDetails(props) {
-  const task = props.task;
+  const [task, setTask] = useState(props.task)
+  
+  const handleClick = async(event) => {
+    
+    const progress = event.target.getAttribute("progress")
+    // from frontend fetch an api endpoint to update
+    const res = await fetch(`/api/tasks/${task.id}`, {
+      method: 'PUT',
+      body: JSON.stringify(progress)})
+      
+      console.log('------task fronend', task);
+    const updTask = await res.json()
+    console.log('UPD---------', updTask[1][0]);
+    setTask(updTask[1][0])
+
+  }
+  
   return (
     <div>
       <h1>Keeper Task Details page (progress) {task.id}</h1>
@@ -13,6 +29,7 @@ function KeeperTaskDetails(props) {
         task info: {task.title}, where: {task.address}
       </p>
       <Progress isThisKeeper={true} />
+      <button progress='40' onClick={handleClick}>Change progress</button>
     </div>
   );
 }
