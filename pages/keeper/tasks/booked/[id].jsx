@@ -20,7 +20,7 @@ function KeeperTaskDetails(props) {
     console.log('------task fronend', task);
     const updTask = await res.json()
     console.log('UPD---------', updTask);
-    setTask(updTask[1][0])
+    setTask(updTask)
 
   }
 
@@ -30,8 +30,8 @@ function KeeperTaskDetails(props) {
       <p>
         task info: {task.title}, where: {task.address}
       </p>
-      <Progress isThisKeeper={true} />
-      <button progress='80' onClick={handleClick}>Change progress</button>
+      <Progress isThisKeeper={true} handleClick={handleClick} progress={task.progress}/>
+      
     </div>
   );
 }

@@ -4,7 +4,7 @@ import db from "../../../database";
 export default async function handler(req, res) {
   if (req.method == "PUT") {
         console.log("reqbody", req.body);
-        const progress = req.body
+        const progress = JSON.parse(req.body)
 
         const id = req.query.id
 
