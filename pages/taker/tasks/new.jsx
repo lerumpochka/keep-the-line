@@ -10,7 +10,7 @@ function NewTask(props) {
     <div>
       <div>
         <div className={styles.container}>
-          <h1>Post a Task</h1>
+          <h1>Post a new Task</h1>
           <div className={styles.form__con}>
             <form className={styles.form} action="/api/tasks" method="POST">
               <input hidden name="UserId" defaultValue={user.id} />
@@ -45,12 +45,18 @@ function NewTask(props) {
                 <input type="text" id="amount" name="amount" placeholder="how much?" required />
               </div>
 
-              <div>
+              <div className={styles.textarea__con}>
                 <label htmlFor="description">Write some description:</label>
-                <textarea id="description" name="description" rows="4" cols="30"></textarea>
+                <textarea
+                  id="description"
+                  name="description"
+                  placeholder="description..."
+                  rows="4"
+                  cols="30"
+                ></textarea>
               </div>
 
-              <input type="submit" value="Submit" />
+              <input className={styles.btn} type="submit" value="Submit" />
             </form>
           </div>
         </div>

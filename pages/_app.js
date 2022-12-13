@@ -16,8 +16,6 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
     (async () => setUser(await getSession()))();
   }, []);
 
-  console.log(user);
-
   return (
     <>
       <SessionProvider session={session}>
