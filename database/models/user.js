@@ -18,9 +18,15 @@ const initUser = (sequelize, DataTypes) => {
     }
   }
   User.init({
-    name: DataTypes.STRING,
+    name:{
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     surName: DataTypes.STRING,
-    email: DataTypes.STRING,
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     password: DataTypes.STRING
   }, {
     sequelize,
