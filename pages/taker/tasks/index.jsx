@@ -8,7 +8,7 @@ function TakerTasks(props) {
   const user = props.currentUser.user
   return (
     <div>
-      <h1>Ceated Tasks by {user.email} </h1>
+      <h1>Created Tasks by {user.email} </h1>
       {tasks.map((task) => (
         <CreatedTaskCard key={task.id} id={task.id} title= {task.title} description= {task.description} 
         address= {task.address} amount= {task.amount} date= {task.date} time= {task.time}/>
