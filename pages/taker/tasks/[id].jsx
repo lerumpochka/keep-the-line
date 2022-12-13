@@ -9,6 +9,16 @@ import { getSession } from "next-auth/react";
 
 function TakerTaskDetails(props) {
   const task = props.task;
+  // const [task, setTask] = useState(props.task)
+
+  const handleClick = async () => {
+    //   await fetch(`/api/tasks/${task.id}`, {
+    //   method: 'DELETE'
+    // })
+    alert(`task with id: ${task.id} was deleted`);
+    location.assign("/taker/tasks")
+  }
+
   return (
     <div>
       <h1> Task Details/Communication:</h1>
@@ -17,7 +27,7 @@ function TakerTaskDetails(props) {
       </p>
       <Progress progress={task.progress}/>
 
-      <button>Cancel Task</button>
+      <button onClick={handleClick}>Cancel Task</button>
     </div>
   );
 }
