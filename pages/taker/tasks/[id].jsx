@@ -12,11 +12,11 @@ function TakerTaskDetails(props) {
   // const [task, setTask] = useState(props.task)
 
   const handleClick = async () => {
-    //   await fetch(`/api/tasks/${task.id}`, {
-    //   method: 'DELETE'
-    // })
     alert(`task with id: ${task.id} was deleted`);
     location.assign("/taker/tasks")
+    await fetch(`/api/tasks/${task.id}`, {
+    method: 'DELETE'
+  })
   }
 
   return (
