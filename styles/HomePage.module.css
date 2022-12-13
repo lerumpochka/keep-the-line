@@ -1,5 +1,5 @@
 .homepage {
-  height: 100vh;
+  height: 80vh;
   width: 100%;
 }
 .homepage__container {
@@ -8,7 +8,7 @@
   align-items: center;
   flex-direction: column;
   height: 100%;
-  padding-bottom: 200px;
+  /* padding-bottom: 200px; */
 }
 .text__con {
   display: flex;

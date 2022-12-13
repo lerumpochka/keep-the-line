@@ -1,6 +1,7 @@
 /* .header__container {
   position: relative;
 } */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Kalam&family=Kaushan+Script&family=Lobster&family=Roboto+Condensed&family=Roboto:wght@100;300;400&family=Ropa+Sans:ital@1&family=Stick+No+Bills&display=swap");
 
 .navbar {
   width: 100%;
@@ -27,6 +28,8 @@
 
 .navbar > .navbar__child > p {
   color: white;
+  font-family: "Kaushan Script", cursive, serif;
+  font-size: 22px;
 }
 
 .menu__content {

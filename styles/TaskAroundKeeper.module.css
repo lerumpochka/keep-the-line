@@ -1,7 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Kalam&family=Kaushan+Script&family=Lobster&family=Roboto+Condensed&family=Roboto:wght@100;300;400&family=Ropa+Sans:ital@1&family=Stick+No+Bills&display=swap");
+
+.container {
+  margin-bottom: 80px;
+}
 .h1__con {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.h1__con > h1 {
+  font-family: "Roboto Condensed", sans-serif;
+  color: #373f44;
 }
 
 .tasks__con {
@@ -9,8 +18,7 @@
   justify-self: center;
   align-items: center;
   flex-direction: column;
-  padding-top: 4rem;
+  padding-top: 1.5rem;
   margin: 20px;
   width: 90%;
 }
-
