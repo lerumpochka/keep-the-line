@@ -17,6 +17,10 @@ function KeeperTaskDetails(props) {
   );
 }
 export async function getServerSideProps(req, res) {
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 318e6738af93aa11fec3d23e6fd6a0617413e5b7
     const session = await getSession(req);
     if (!session) {
       return {
@@ -30,6 +34,13 @@ export async function getServerSideProps(req, res) {
 
   const id = req.query.id
   const task = JSON.parse(JSON.stringify(await db.Task.findByPk(id)))
+<<<<<<< HEAD
+=======
+  const id = req.query.id;
+  const task = JSON.parse(JSON.stringify(await db.Task.findByPk(id)));
+>>>>>>> 7ed138866122457aed920aa1e48fa7c914def861
+=======
+>>>>>>> 318e6738af93aa11fec3d23e6fd6a0617413e5b7
   return {
     props: { task },
   };
