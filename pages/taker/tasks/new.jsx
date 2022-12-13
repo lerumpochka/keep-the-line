@@ -10,7 +10,7 @@ function NewTask(props) {
     <div>
       <div>
         <div className={styles.container}>
-          <h1>Post a Task</h1>
+          <h1>Post a new Task</h1>
           <div className={styles.form__con}>
             <form className={styles.form} action="/api/tasks" method="POST">
               <input hidden name="UserId" defaultValue={user.id} />

@@ -5,6 +5,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import Fade from "react-reveal/Fade";
 import Link from "next/link";
 import { signOut } from "next-auth/react";
+import Image from "next/image";
 
 function Header() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -12,7 +13,10 @@ function Header() {
     <div className={styles.header__container}>
       <nav className={styles.navbar}>
         <div className={styles.navbar__child}>
-          <p>Keep the line</p>
+          <p>Keep the Line</p>
+          {/* <div>
+            <Image src="/keep-the-line.png" width="60" height="60" />
+          </div> */}
           <MenuIcon
             onClick={() => setOpenMenu(() => !openMenu)}
             sx={{ color: "white", fontSize: "2.5rem" }}
