@@ -1,17 +1,21 @@
 import { getSession } from "next-auth/react";
 import React from "react";
+import db from "../../database";
+// import db from "../../database";
 
-function Profile() {
+function Profile(props) {
+  console.log(props.currentUser)
   return (
     <div>
       <h1>profile page</h1>
-      <p>User information</p>
+      <p>{props.currentUser.email}</p>
     </div>
   );
 }
 
 export async function getServerSideProps(req, res) {
   const session = await getSession(req);
+  //console.log(session.user.email)
   if (!session) {
     return {
       redirect: {
@@ -20,8 +24,10 @@ export async function getServerSideProps(req, res) {
       },
     };
   }
+// find user from DB based on email 
+const user = JSON.parse(JSON.stringify(await db.User.findOne({ where: { email: session.user.email } })))
 return {
-  props: { currentUser: session },
+  props: { currentUser: user },
 };
 }
 
