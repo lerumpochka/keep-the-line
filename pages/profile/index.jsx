@@ -9,6 +9,7 @@ function Profile(props) {
     <div>
       <h1>profile page</h1>
       <p>{props.currentUser.name}</p>
+      <p>{props.currentUser.email}</p>
     </div>
   );
 }
