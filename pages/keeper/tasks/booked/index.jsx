@@ -9,9 +9,9 @@ function bookedTasks(props) {
   const tasks = bookings.map((booking) => booking.Task);
   return (
     <div>
-      <h1>All Keeper Tasks here (Booked)</h1>
-      {tasks.map((task, index) => (
-        <li key={index}>
+      <h1>Here's your booked tasks, Keeper 🙂 </h1>
+      {tasks.map((task) => (
+        <li key={task.id}>
           <Link href={`/keeper/tasks/booked/${task.id}`}>
             {task.title} in {task.address}
           </Link>
