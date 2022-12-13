@@ -15,7 +15,7 @@ function TakerTaskDetails(props) {
       <p>
         task id: {task.id} task title: {task.title}, where: {task.address}
       </p>
-      <Progress />
+      <Progress progress={task.progress}/>
 
       <button>Cancel Task</button>
     </div>
