@@ -1,26 +1,41 @@
 
 import { getSession } from "next-auth/react";
-import React from "react";
+import React, { useState } from "react";
 import db from "../../../../database";
 import Progress from "../../../../components/Progress";
 
 function KeeperTaskDetails(props) {
-  const task = props.task;
+  const [task, setTask] = useState(props.task)
+
+  const handleClick = async (event) => {
+
+    const progress = event.target.getAttribute("progress")
+    console.log(progress);
+    // from frontend fetch an api endpoint to update
+    const res = await fetch(`/api/tasks/${task.id}`, {
+      method: 'PUT',
+      body: JSON.stringify({ progress: parseInt(progress) })
+    })
+
+    console.log('------task fronend', task);
+    const updTask = await res.json()
+    console.log('UPD---------', updTask);
+    setTask(updTask)
+
+  }
+
   return (
     <div>
       <h1>Keeper Task Details page (progress) {task.id}</h1>
       <p>
         task info: {task.title}, where: {task.address}
       </p>
-      <Progress isThisKeeper={true} />
+      <Progress isThisKeeper={true} handleClick={handleClick} progress={task.progress}/>
+      
     </div>
   );
 }
 export async function getServerSideProps(req, res) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 318e6738af93aa11fec3d23e6fd6a0617413e5b7
     const session = await getSession(req);
     if (!session) {
       return {
@@ -31,16 +46,9 @@ export async function getServerSideProps(req, res) {
       };
     }
 
-
   const id = req.query.id
   const task = JSON.parse(JSON.stringify(await db.Task.findByPk(id)))
-<<<<<<< HEAD
-=======
-  const id = req.query.id;
-  const task = JSON.parse(JSON.stringify(await db.Task.findByPk(id)));
->>>>>>> 7ed138866122457aed920aa1e48fa7c914def861
-=======
->>>>>>> 318e6738af93aa11fec3d23e6fd6a0617413e5b7
+
   return {
     props: { task },
   };
