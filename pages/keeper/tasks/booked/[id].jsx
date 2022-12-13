@@ -36,19 +36,19 @@ function KeeperTaskDetails(props) {
   );
 }
 export async function getServerSideProps(req, res) {
-  const session = await getSession(req);
-  if (!session) {
-    return {
-      redirect: {
-        permanent: false,
-        destination: "/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2F",
-      },
-    };
-  }
-
+    const session = await getSession(req);
+    if (!session) {
+      return {
+        redirect: {
+          permanent: false,
+          destination: "/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2F",
+        },
+      };
+    }
 
   const id = req.query.id
   const task = JSON.parse(JSON.stringify(await db.Task.findByPk(id)))
+
   return {
     props: { task },
   };
