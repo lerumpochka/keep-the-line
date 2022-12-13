@@ -8,13 +8,14 @@ const authOptions = {
     CredentialsProvider({
       name: "Credentials",
       credentials: {
+        username: {label: "User Name", type: "text", placeholder: "your name..."},
         email: { label: "Email", type: "text", placeholder: "your email..." },
         password: { label: "Password", type: "password", placeholder: "your password" },
       },
       async authorize(credentials, req) {
         //to add in DB
         const [user, created] = await db.User.findOrCreate({
-            where: {email: credentials.email},
+            where: {name: credentials.username, email: credentials.email},
             defaults: {password: credentials.password}
         })
 
