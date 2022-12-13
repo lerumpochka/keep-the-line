@@ -15,8 +15,7 @@ const authOptions = {
       async authorize(credentials, req) {
         //to add in DB
         const [user, created] = await db.User.findOrCreate({
-            where: {name: credentials.username },
-            where: {email: credentials.email},
+            where: {name: credentials.username, email: credentials.email},
             defaults: {password: credentials.password}
         })
 

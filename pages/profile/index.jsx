@@ -8,7 +8,7 @@ function Profile(props) {
   return (
     <div>
       <h1>profile page</h1>
-      <p>{props.currentUser.email}</p>
+      <p>{props.currentUser.name}</p>
     </div>
   );
 }
