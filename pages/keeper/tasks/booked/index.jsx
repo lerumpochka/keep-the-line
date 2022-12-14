@@ -1,7 +1,6 @@
 import { getSession } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
-import CreatedTaskCard from "../../../../components/CreatedTaskCard";
 // import db from "../../../../database";
 import db from "../../../../database";
 
@@ -11,26 +10,13 @@ function bookedTasks(props) {
   console.log(tasks);
   return (
     <div>
-      <h1 style={{ fontFamily: "Roboto Condensed", color: "#373f44", margin: "0px auto" }}>
-        Booked Tasks
-      </h1>
+      <h1>Booked tasks </h1>
       {tasks.map((task) => (
-        <Link
-          key={task.id}
-          style={{ textDecoration: "none" }}
-          href={`/keeper/tasks/booked/${task.id}`}
-        >
-          <CreatedTaskCard
-            key={task.id}
-            id={task.id}
-            title={task.title}
-            description={task.description}
-            address={task.address}
-            amount={task.amount}
-            date={task.date}
-            time={task.time}
-          />
-        </Link>
+        <li key={task.id}>
+          <Link href={`/keeper/tasks/booked/${task.id}`}>
+            {task.title} in {task.address}
+          </Link>
+        </li>
       ))}
     </div>
   );
