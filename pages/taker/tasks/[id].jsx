@@ -13,10 +13,12 @@ function TakerTaskDetails(props) {
 
   const handleClick = async () => {
     alert(`task with id: ${task.id} was deleted`);
-    location.assign("/taker/tasks")
+    setTimeout(()=>{
+      location.assign("/taker/tasks")
+    }, 2000)
     await fetch(`/api/tasks/${task.id}`, {
-    method: 'DELETE'
-  })
+      method: 'DELETE'
+    })
   }
 
   return (
