@@ -9,9 +9,10 @@ function CreatedTaskCard(props) {
         <p>{props.address}</p>
         <p>{props.description}</p>
         <p>
-          {props.date}<span>{props.time}</span>
+          {props.date}
+          <span>{props.time}</span>
         </p>
-        <p>amount:{props.amount}$</p>
+        <p>Amount: {props.amount}&euro;</p>
       </div>
     </Link>
   );

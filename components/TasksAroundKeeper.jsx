@@ -9,16 +9,7 @@ function TasksAroundKeeper(props) {
       </div>
       <div className={styles.tasks__con}>
         {props.tasks.map((task) => (
-          <TaskCard
-            key={task.id}
-            id={task.id}
-            title={task.title}
-            description={task.description}
-            address={task.address}
-            amount={task.amount}
-            date={task.date}
-            time={task.time}
-          />
+          <TaskCard key={task.id} id={task.id} title={task.title} date={task.date} />
         ))}
       </div>
     </div>
