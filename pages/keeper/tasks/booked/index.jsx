@@ -7,6 +7,7 @@ import db from "../../../../database";
 function bookedTasks(props) {
   const bookings = props.bookings;
   const tasks = bookings.map((booking) => booking.Task);
+  console.log('------tasks BOOKED', tasks);
   return (
     <div>
       <h1>Here's your booked tasks, Keeper 🙂 </h1>
