@@ -25,6 +25,7 @@ export default async function handler(req, res) {
       await db.Booking.destroy({ where: { TaskId: id } })
 
 
+
       res.status(200)
   } catch (error) {
       console.log(error.message);
