@@ -2,12 +2,9 @@ import db from "../../../database";
 
 
 export default async function handler(req, res) {
+  const id = req.query.id
   if (req.method == "PUT") {
-        console.log("reqbody", req.body);
         const progress = JSON.parse(req.body)
-
-        const id = req.query.id
-
     try {
         let task = await db.Task.findByPk(id)
 
@@ -20,5 +17,15 @@ export default async function handler(req, res) {
         console.log(error.message);
         res.status(400)
     }
+  }
+  if (req.method == "DELETE") {
+    try {
+      let task = await db.Task.findByPk(id)
+      task = await task.destroy({ where: { id: task.id } })
+      res.status(200)
+  } catch (error) {
+      console.log(error.message);
+      res.status(400)
+  }
   }
 }

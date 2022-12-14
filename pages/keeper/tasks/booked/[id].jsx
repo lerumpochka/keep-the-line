@@ -23,7 +23,7 @@ function KeeperTaskDetails(props) {
 
   return (
     <div>
-      <h1>Keeper Task Details page (progress) {task.id}</h1>
+      <h1>Task Details & comunication progress {task.id}</h1>
       <p>
         task info: {task.title}, where: {task.address}
       </p>

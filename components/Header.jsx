@@ -13,7 +13,7 @@ function Header() {
     <div className={styles.header__container}>
       <nav className={styles.navbar}>
         <div className={styles.navbar__child}>
-          <p>Keep the Line</p>
+          <Link href="/" ><p>Keep the Line</p></Link> 
           {/* <div>
             <Image src="/keep-the-line.png" width="60" height="60" />
           </div> */}
@@ -33,22 +33,16 @@ function Header() {
             />
             <ul>
               <li>
-                <Link href="/keeper/tasks">All tasks around you</Link>
+                <Link href="/profile">My Profile</Link>
               </li>
               <li>
-                <Link href="/keeper/tasks/2">book a task</Link>
+                <Link href="/keeper/tasks">Tasks around you</Link>
               </li>
               <li>
-                <Link href="/taker/tasks/new">Create new task-- form</Link>
+                <Link href="/taker/tasks">Created Tasks</Link>
               </li>
               <li>
-                <Link href="/taker/tasks">All created tasks</Link>
-              </li>
-              <li>
-                <Link href="/taker/tasks/1">created task details page</Link>
-              </li>
-              <li>
-                <Link href="/keeper/tasks/booked">booked Tasks</Link>
+                <Link href="/keeper/tasks/booked">Booked Tasks</Link>
               </li>
             </ul>
             <button className={styles.sign__out} onClick={() => signOut()}>
