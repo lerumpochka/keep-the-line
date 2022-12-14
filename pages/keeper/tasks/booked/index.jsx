@@ -1,7 +1,7 @@
 import { getSession } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
-import CreatedTaskCard from "../../../../components/CreatedTaskCard";
+import TaskCardOne from "../../../../components/TaskCardOne";
 // import db from "../../../../database";
 import db from "../../../../database";
 
@@ -20,7 +20,8 @@ function bookedTasks(props) {
           style={{ textDecoration: "none" }}
           href={`/keeper/tasks/booked/${task.id}`}
         >
-          <CreatedTaskCard
+
+          <TaskCardOne
             key={task.id}
             id={task.id}
             title={task.title}
