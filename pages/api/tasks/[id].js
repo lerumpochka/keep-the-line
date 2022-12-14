@@ -21,10 +21,11 @@ export default async function handler(req, res) {
   if (req.method == "DELETE") {
     try {
       let task = await db.Task.findByPk(id)
-
       await task.destroy({ where: { id: task.id } })
-     
       await db.Booking.destroy({ where: { TaskId: id } })
+
+
+
       res.status(200)
   } catch (error) {
       console.log(error.message);
