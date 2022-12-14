@@ -1,53 +1,102 @@
 import ProgressBar from "@ramonak/react-progress-bar";
 import styles from "../styles/Progress.module.css";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
-function Progress({ isThisKeeper, ...props}) {
-  const [progress, setProgress] = useState("");
-  const [percent, setPercent] = useState(0);
-  const [style, setStyle] = useState({});
+function Progress({ isThisKeeper, ...props }) {
+  const [message, setMessage] = useState("");
+  const [messageStyle, setMessageStyle] = useState({});
 
-  // const handleChange = (e) => {
-  //   setProgress(e.target.value);
-  //   const name = parseInt(e.target.name);
-  //   setPercent(name);
-  //   if (name == "70") {
-  //     setStyle({ justifyContent: "center", transition: "250ms" });
-  //   } else if (name == "100") {
-  //     setStyle({ justifyContent: "flex-end", transition: "250ms" });
-  //   }
-  // };
+  const [inTheLine, setInTheLine] = useState({});
+  const [yourTurn, setYourTurn] = useState({});
+  const [taskDone, setTaskDone] = useState({});
+
+  const [isInTheLine, setIsInTheLine] = useState(false);
+  const [isYourTurn, setIsYourTurn] = useState(false);
+  const [isTaskDone, setIsTaskDone] = useState(false);
+
+  useEffect(() => {
+    if (props.progress === null) {
+      setInTheLine({ opacity: "1" });
+      setYourTurn({ opacity: "0.6" });
+      setTaskDone({ opacity: "0.6" });
+      setIsInTheLine(true);
+    } else if (props.progress == "30") {
+      setMessage("I am in the line😐");
+      setMessageStyle({ justifyContent: "flex-start" });
+
+      setIsInTheLine(false);
+      setIsYourTurn(true);
+
+      setYourTurn({ opacity: "1" });
+      setInTheLine({ opacity: "0.6" });
+      setTaskDone({ opacity: "0.6" });
+    } else if (props.progress == "60") {
+      setYourTurn({ opacity: "0.6" });
+      setInTheLine({ opacity: "0.6" });
+      setTaskDone({ opacity: "1" });
+
+      setIsInTheLine(false);
+      setIsYourTurn(false);
+      setIsTaskDone(true);
+
+      setMessage("Almost your turn😃");
+      setMessageStyle({ justifyContent: "center" });
+    } else if (props.progress == "100") {
+      setMessage("Task done😉");
+      setMessageStyle({ justifyContent: "flex-end" });
+
+      setIsInTheLine(false);
+      setIsYourTurn(false);
+      setIsTaskDone(false);
+
+      setYourTurn({ opacity: "0.6" });
+      setInTheLine({ opacity: "0.6" });
+      setTaskDone({ opacity: "0.6" });
+    }
+  }, [props.progress]);
 
   return (
     <div className={styles.container}>
-      <div style={style} className={styles.status__con}>
-        <h3 className={styles.status}>{progress}</h3>
+      <div style={messageStyle} className={styles.status__con}>
+        <h3 className={styles.status}>{message}</h3>
       </div>
-      <ProgressBar completed={props.progress} bgColor="#373f44" height="20px" />
+      <ProgressBar completed={props.progress} bgColor="#373f44" height="30px" />
       {isThisKeeper && (
-        // <form>
-        //   <div className={styles.input__con}>
-            
-        //     <input onChange={handleChange} onClick={props.handleClick}  name={props.progress} type="radio" value="I'm in the line😐" />
-        //     <label>I'm in the line</label>
-        //   </div>
+        <div className={styles.btn__con}>
+          <div>
+            <button
+              style={inTheLine}
+              className={styles.btn}
+              progress="30"
+              onClick={isInTheLine ? props.handleClick : null}
+            >
+              I am in the line😐
+            </button>
+          </div>
 
-        //   <div className={styles.input__con}>
-        //     <input onChange={handleChange} name={props.progress} type="radio" value="Almost your turn😃" />
-        //     <label>Almost your turn</label>
-        //   </div>
+          <div>
+            <button
+              style={yourTurn}
+              className={styles.btn}
+              progress="60"
+              onClick={isYourTurn ? props.handleClick : null}
+            >
+              Almost your turn😃
+            </button>
+          </div>
 
-        //   <div className={styles.input__con}>
-        //     <input onChange={handleChange} name="100" type="radio" value="Task done😉" />
-        //     <label>Task done</label>
-        //   </div>
-        // </form>
-        <>
-        <button progress='30' onClick={props.handleClick}>I am in the line</button>
-        <button progress="60" onClick={props.handleClick}>Almost your turn😃</button>
-        <button progress="100" onClick={props.handleClick}>Task done😉</button>
-        </>
+          <div>
+            <button
+              style={taskDone}
+              className={styles.btn}
+              progress="100"
+              onClick={taskDone ? props.handleClick : null}
+            >
+              Task done😉
+            </button>
+          </div>
+        </div>
       )}
     </div>
   );
