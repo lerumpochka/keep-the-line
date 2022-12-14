@@ -24,14 +24,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
 }
 
-.navbar > .navbar__child > p {
+.navbar > .navbar__child > a > p {
   color: white;
   font-family: "Kaushan Script", cursive, serif;
   font-size: 22px;
+  /*text-decoration: underline;*/
+  border-bottom: 3px solid white;
 }
-
+.navbar > .navbar__child > a {
+text-decoration: none;
+color: white; 
+}
 .menu__content {
   height: 100vh;
   width: 80%;
