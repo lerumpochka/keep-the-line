@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Kalam&family=Kaushan+Script&family=Lobster&family=Roboto+Condensed&family=Roboto:wght@100;300;400&family=Ropa+Sans:ital@1&family=Stick+No+Bills&display=swap");
+
 .container {
   margin: 2rem 1rem;
 }
@@ -44,4 +46,33 @@
 .status {
   transition: all 250ms;
   overflow: hidden;
+}
+/* .btn__con {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+} */
+.btn__con {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  padding-top: 20px;
+}
+.btn__con > div {
+}
+.btn__con > div > button {
+  padding: 10px 15px;
+  border-radius: 4px;
+  border: none;
+  background-color: #373f44;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Roboto Condensed", sans-serif;
 }
