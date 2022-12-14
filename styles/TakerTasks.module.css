@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Kalam&family=Kaushan+Script&family=Lobster&family=Roboto+Condensed&family=Roboto:wght@100;300;400&family=Ropa+Sans:ital@1&family=Stick+No+Bills&display=swap");
+
+.container {
+  width: 100%;
+}
+
+.text__con {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.text__con > a {
+  text-decoration: none;
+  color: white;
+}
+
+.text__con > h1 {
+  font-family: "Roboto Condensed", sans-serif;
+  color: #373f44;
+}
+
+.icon__con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 25px;
+  background-color: #373f44;
+}
+
+.icon__con > span {
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+}
