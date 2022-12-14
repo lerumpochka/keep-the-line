@@ -6,12 +6,13 @@ function TaskCard(props) {
     <Link className={styles.link} href={`/keeper/tasks/${props.id}`}>
       <div className={styles.container}>
         <h2>{props.title}</h2>
-        <p>{props.address}</p>
         <p>{props.description}</p>
+        <p>{props.address}</p>
         <p>
-          {props.date}<span>{props.time}</span>
+          {props.date}
+          <span>{props.time}</span>
         </p>
-        <p>amount:{props.amount}$</p>
+        {props.amount && <p>amount:{props.amount} &euro;</p>}
       </div>
     </Link>
   );

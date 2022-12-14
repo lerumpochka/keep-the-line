@@ -2,13 +2,12 @@ import { getSession } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
 import db from "../../database";
-import styles from "../../styles/HomePage.module.css";
-
-
+import styles from "../../styles/Profile.module.css";
+import Link from "next/link";
 // import db from "../../database";
 
 function Profile(props) {
-  console.log(props.currentUser)
+  console.log(props.currentUser);
   return (
     <>
       <div>
@@ -47,8 +46,10 @@ export async function getServerSideProps(req, res) {
       },
     };
   }
-  // find user from DB based on email 
-  const user = JSON.parse(JSON.stringify(await db.User.findOne({ where: { email: session.user.email } })))
+  // find user from DB based on email
+  const user = JSON.parse(
+    JSON.stringify(await db.User.findOne({ where: { email: session.user.email } }))
+  );
   return {
     props: { currentUser: user },
   };
