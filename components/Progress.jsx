@@ -4,32 +4,55 @@ import styles from "../styles/Progress.module.css";
 import { useState, useEffect, useRef } from "react";
 
 function Progress({ isThisKeeper, ...props }) {
-  const [style, setStyle] = useState({});
   const [message, setMessage] = useState("");
   const [messageStyle, setMessageStyle] = useState({});
-  const [startProgress, setStartProgress] = useState(false);
 
-  const inTheLine = useRef();
-  const yourTurn = useRef();
-  const taskDone = useRef();
+  const [inTheLine, setInTheLine] = useState({});
+  const [yourTurn, setYourTurn] = useState({});
+  const [taskDone, setTaskDone] = useState({});
 
-  console.log(props.progress);
+  const [isInTheLine, setIsInTheLine] = useState(false);
+  const [isYourTurn, setIsYourTurn] = useState(false);
+  const [isTaskDone, setIsTaskDone] = useState(false);
 
   useEffect(() => {
     if (props.progress === null) {
-      // setStartProgress(true);
+      setInTheLine({ opacity: "1" });
+      setYourTurn({ opacity: "0.6" });
+      setTaskDone({ opacity: "0.6" });
+      setIsInTheLine(true);
     } else if (props.progress == "30") {
-      // setStyle({ display: "none" });
       setMessage("I am in the line😐");
       setMessageStyle({ justifyContent: "flex-start" });
+
+      setIsInTheLine(false);
+      setIsYourTurn(true);
+
+      setYourTurn({ opacity: "1" });
+      setInTheLine({ opacity: "0.6" });
+      setTaskDone({ opacity: "0.6" });
     } else if (props.progress == "60") {
-      // setStyle({ display: "none" });
+      setYourTurn({ opacity: "0.6" });
+      setInTheLine({ opacity: "0.6" });
+      setTaskDone({ opacity: "1" });
+
+      setIsInTheLine(false);
+      setIsYourTurn(false);
+      setIsTaskDone(true);
 
       setMessage("Almost your turn😃");
       setMessageStyle({ justifyContent: "center" });
     } else if (props.progress == "100") {
       setMessage("Task done😉");
       setMessageStyle({ justifyContent: "flex-end" });
+
+      setIsInTheLine(false);
+      setIsYourTurn(false);
+      setIsTaskDone(false);
+
+      setYourTurn({ opacity: "0.6" });
+      setInTheLine({ opacity: "0.6" });
+      setTaskDone({ opacity: "0.6" });
     }
   }, [props.progress]);
 
@@ -38,23 +61,38 @@ function Progress({ isThisKeeper, ...props }) {
       <div style={messageStyle} className={styles.status__con}>
         <h3 className={styles.status}>{message}</h3>
       </div>
-      <ProgressBar completed={props.progress} bgColor="#373f44" height="20px" />
+      <ProgressBar completed={props.progress} bgColor="#373f44" height="30px" />
       {isThisKeeper && (
         <div className={styles.btn__con}>
-          <div style={style} ref={inTheLine}>
-            <button className={styles.btn} progress="30" onClick={props.handleClick}>
+          <div>
+            <button
+              style={inTheLine}
+              className={styles.btn}
+              progress="30"
+              onClick={isInTheLine ? props.handleClick : null}
+            >
               I am in the line😐
             </button>
           </div>
 
-          <div style={style} ref={yourTurn}>
-            <button className={styles.btn} progress="60" onClick={props.handleClick}>
+          <div>
+            <button
+              style={yourTurn}
+              className={styles.btn}
+              progress="60"
+              onClick={isYourTurn ? props.handleClick : null}
+            >
               Almost your turn😃
             </button>
           </div>
 
-          <div style={style} ref={taskDone}>
-            <button className={styles.btn} progress="100" onClick={props.handleClick}>
+          <div>
+            <button
+              style={taskDone}
+              className={styles.btn}
+              progress="100"
+              onClick={taskDone ? props.handleClick : null}
+            >
               Task done😉
             </button>
           </div>

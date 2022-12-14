@@ -13,17 +13,19 @@ function Header() {
     <div className={styles.header__container}>
       <nav className={styles.navbar}>
         <div className={styles.navbar__child}>
-          <Link href="/" ><p>Keep the Line</p></Link> 
+          <Link href="/">
+            <p>Keep the Line</p>
+          </Link>
           {/* <div>
             <Image src="/keep-the-line.png" width="60" height="60" />
           </div> */}
-          <MenuIcon
+          {/* <MenuIcon
             onClick={() => setOpenMenu(() => !openMenu)}
             sx={{ color: "white", fontSize: "2.5rem" }}
-          />
+          /> */}
         </div>
       </nav>
-      {openMenu && (
+      {/* {openMenu && (
         <Fade right>
           <div onClick={() => setOpenMenu(false)} className={styles.menu__content}>
             <CloseIcon
@@ -50,7 +52,7 @@ function Header() {
             </button>
           </div>
         </Fade>
-      )}
+      )} */}
     </div>
   );
 }

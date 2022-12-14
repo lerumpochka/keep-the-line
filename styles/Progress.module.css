@@ -58,19 +58,21 @@
 .btn__con {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
   width: 100%;
   padding-top: 20px;
 }
 .btn__con > div {
 }
 .btn__con > div > button {
-  padding: 8px 2px;
+  padding: 10px 15px;
   border-radius: 4px;
   border: none;
   background-color: #373f44;
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   font-family: "Roboto Condensed", sans-serif;
 }
