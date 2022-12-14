@@ -4,15 +4,15 @@ import AddIcon from "@mui/icons-material/Add";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import ManageSearchIcon from "@mui/icons-material/ManageSearch";
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
-import PersonIcon from "@mui/icons-material/Person";
+import PlaylistAddCheckOutlinedIcon from "@mui/icons-material/PlaylistAddCheckOutlined";
 
 import Link from "next/link";
 function Navbar() {
   return (
     <div className={styles.container}>
       <div className={styles.icons__con}>
-        <Link href="/profile">
-          <PersonIcon sx={{ color: "white", fontSize: "2.5rem" }} />
+        <Link href="/keeper/tasks/booked">
+          <PlaylistAddCheckOutlinedIcon sx={{ color: "white", fontSize: "2.8rem" }} />
         </Link>
 
         <Link href="/taker/tasks">

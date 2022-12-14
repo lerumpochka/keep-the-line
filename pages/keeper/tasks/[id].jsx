@@ -58,6 +58,7 @@ export async function getServerSideProps(req, res) {
   const task = await taskController.find(id);
 
   const session = await getSession(req);
+  console.log("session", session);
   if (!session) {
     return {
       redirect: {

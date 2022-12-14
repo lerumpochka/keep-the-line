@@ -12,9 +12,8 @@ function Profile(props) {
     <>
       <div>
         <h1>Hey {props.currentUser.name}</h1>
+        {/* <br />
         <br />
-        <br />
-
 
         <h3> Booked Tasks:</h3>
         <br />
@@ -27,9 +26,10 @@ function Profile(props) {
         <br />
         <div className={styles.buttons__con}>
           <Link href="/taker/tasks/">My Tasks</Link>
-        </div>
-
-
+        </div> */}
+        <p>Email: {props.currentUser.email}</p>
+        <p>Amount paid: 25&euro;</p>
+        <p>Amount recieved: 35&euro;</p>
       </div>
     </>
   );
