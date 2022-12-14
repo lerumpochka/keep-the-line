@@ -8,7 +8,7 @@ import Link from "next/link";
 
 function TakerTasks(props) {
   const tasks = props.tasks;
-  const user = props.currentUser.user;
+  // const user = props.currentUser.user;
   return (
     <div className={styles.container}>
       <div className={styles.text__con}>
@@ -54,4 +54,4 @@ export async function getServerSideProps(req, res) {
     props: { tasks, currentUser: session },
   };
 }
-export default TakerTasks; 
+export default TakerTasks;

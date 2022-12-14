@@ -6,6 +6,7 @@ import Fade from "react-reveal/Fade";
 import Link from "next/link";
 import { signOut } from "next-auth/react";
 import Image from "next/image";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 function Header() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -15,6 +16,9 @@ function Header() {
         <div className={styles.navbar__child}>
           <Link href="/">
             <p>Keep the Line</p>
+          </Link>
+          <Link href="/profile">
+            <AccountCircleIcon sx={{ color: "white", fontSize: "2.5rem" }} />
           </Link>
           {/* <div>
             <Image src="/keep-the-line.png" width="60" height="60" />
