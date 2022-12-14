@@ -1,28 +1,25 @@
-
 import { getSession } from "next-auth/react";
 import React, { useState } from "react";
 import db from "../../../../database";
 import Progress from "../../../../components/Progress";
 
 function KeeperTaskDetails(props) {
-  const [task, setTask] = useState(props.task)
+  const [task, setTask] = useState(props.task);
 
   const handleClick = async (event) => {
-
-    const progress = event.target.getAttribute("progress")
+    const progress = event.target.getAttribute("progress");
     console.log(progress);
     // from frontend fetch an api endpoint to update
     const res = await fetch(`/api/tasks/${task.id}`, {
-      method: 'PUT',
-      body: JSON.stringify({ progress: parseInt(progress) })
-    })
+      method: "PUT",
+      body: JSON.stringify({ progress: parseInt(progress) }),
+    });
 
-    console.log('------task fronend', task);
-    const updTask = await res.json()
-    console.log('UPD---------', updTask);
-    setTask(updTask)
-
-  }
+    console.log("------task fronend", task);
+    const updTask = await res.json();
+    console.log("UPD---------", updTask);
+    setTask(updTask);
+  };
 
   return (
     <div>
@@ -30,24 +27,23 @@ function KeeperTaskDetails(props) {
       <p>
         task info: {task.title}, where: {task.address}
       </p>
-      <Progress isThisKeeper={true} handleClick={handleClick} progress={task.progress}/>
-      
+      <Progress isThisKeeper={true} handleClick={handleClick} progress={task.progress} />
     </div>
   );
 }
 export async function getServerSideProps(req, res) {
-    const session = await getSession(req);
-    if (!session) {
-      return {
-        redirect: {
-          permanent: false,
-          destination: "/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2F",
-        },
-      };
-    }
+  const session = await getSession(req);
+  if (!session) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: "/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2F",
+      },
+    };
+  }
 
-  const id = req.query.id
-  const task = JSON.parse(JSON.stringify(await db.Task.findByPk(id)))
+  const id = req.query.id;
+  const task = JSON.parse(JSON.stringify(await db.Task.findByPk(id)));
 
   return {
     props: { task },
