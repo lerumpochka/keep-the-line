@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import db from "../../database";
 import styles from "../../styles/Profile.module.css";
-import Link from "next/link";
+
 // import db from "../../database";
 
 function Profile(props) {
