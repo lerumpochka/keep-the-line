@@ -9,7 +9,6 @@ import styles from "../../../../styles/TakerTasks.module.css";
 function bookedTasks(props) {
   const bookings = props.bookings;
   const tasks = bookings.map((booking) => booking.Task);
-  console.log(tasks);
   return (
     <div className={styles.container}>
       <h1 className={styles.head__h1}>Booked Tasks</h1>

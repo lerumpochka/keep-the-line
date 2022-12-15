@@ -9,16 +9,13 @@ function KeeperTaskDetails(props) {
 
   const handleClick = async (event) => {
     const progress = event.target.getAttribute("progress");
-    console.log(progress);
     // from frontend fetch an api endpoint to update
     const res = await fetch(`/api/tasks/${task.id}`, {
       method: "PUT",
       body: JSON.stringify({ progress: parseInt(progress) }),
     });
 
-    console.log("------task fronend", task);
     const updTask = await res.json();
-    console.log("UPD---------", updTask);
     setTask(updTask);
   };
 

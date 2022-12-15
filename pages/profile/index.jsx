@@ -8,7 +8,6 @@ import { signOut } from "next-auth/react";
 // import db from "../../database";
 
 function Profile(props) {
-  console.log(props.currentUser);
   return (
     <div className={styles.container}>
       <h1>Hey {props.currentUser.name}</h1>
@@ -38,7 +37,6 @@ function Profile(props) {
 
 export async function getServerSideProps(req, res) {
   const session = await getSession(req);
-  //console.log(session.user.email)
   if (!session) {
     return {
       redirect: {
