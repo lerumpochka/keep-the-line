@@ -5,10 +5,10 @@ module.exports = {
   async up (queryInterface, Sequelize) {
     
      await queryInterface.bulkInsert('Tasks', [{
-        title: 'first task',
-        description: 'my first task description',
+        title: 'Poste Italiane',
+        description: 'fare lo SPID',
         address: 'via Roma, 26',
-        UserId: 2,
+        UserId: 1,
         amount: 5,
         date: new Date('2022 December 10'),
         time: new Date('2022 December 10'),
@@ -18,8 +18,8 @@ module.exports = {
 
      },
      {
-      title: 'second task',
-      description: 'my second task description',
+      title: 'Unicredit Bank',
+      description: 'aprire conto corrente',
       address: 'via Venetto, 10',
       UserId: 1,
       amount: 5,
@@ -29,8 +29,8 @@ module.exports = {
       updatedAt: new Date()
    },
    {
-      title: 'anagrafe',
-      description: ' description ',
+      title: 'Anagrafe',
+      description: 'cambiare la residenza ',
       address: 'via Mateotti, 14',
       UserId: 1,
       amount: 6,
