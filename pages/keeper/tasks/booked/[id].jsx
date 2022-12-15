@@ -2,6 +2,7 @@ import { getSession } from "next-auth/react";
 import React, { useState } from "react";
 import db from "../../../../database";
 import Progress from "../../../../components/Progress";
+import styles from "../../../../styles/TaskCard.module.css";
 
 function KeeperTaskDetails(props) {
   const [task, setTask] = useState(props.task);
@@ -23,10 +24,17 @@ function KeeperTaskDetails(props) {
 
   return (
     <div>
-      <h1>Task Details & comunication progress {task.id}</h1>
-      <p>
-        task info: {task.title}, where: {task.address}
-      </p>
+      <h1 className={styles.communicate}>Communicate with the Taker</h1>
+      <div className={styles.container}>
+        <h2>{task.title}</h2>
+        <p>{task.description}</p>
+        <p>{task.address}</p>
+        <p>
+          {task.date}
+          <span>{task.time}</span>
+        </p>
+        {task.amount && <p>amount:{task.amount} &euro;</p>}
+      </div>
       <Progress isThisKeeper={true} handleClick={handleClick} progress={task.progress} />
     </div>
   );
