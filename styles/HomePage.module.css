@@ -9,19 +9,22 @@
   flex-direction: column;
   height: 100%; */
   /* padding-bottom: 200px; */
-}
-.text__con {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+.text__con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  padding: 0.7rem 1rem;
+  padding: 0.7rem 2rem;
 }
 .text__con > h1 {
   font-family: "Roboto Condensed", "Roboto", sans-serif;
   color: #373f44;
   margin-top: 6rem;
-  margin-bottom: 1rem;
+  margin-bottom: 4rem;
 }
 .text__con > p {
   font-family: "Roboto Condensed", "Roboto", sans-serif;
