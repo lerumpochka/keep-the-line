@@ -2,7 +2,8 @@ import { getSession } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
 import db from "../../database";
-import styles from "../../styles/Profile.module.css";
+import { signOut } from "next-auth/react";
+import styles from "../../styles/Login.module.css";
 
 // import db from "../../database";
 
@@ -31,6 +32,9 @@ function Profile(props) {
         <p>Amount paid: 25&euro;</p>
         <p>Amount recieved: 35&euro;</p>
       </div>
+      <div className={styles.btn__con}>
+          <button onClick={() => signOut()}>Sign out</button>
+        </div>
     </>
   );
 }
