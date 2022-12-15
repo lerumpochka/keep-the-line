@@ -13,25 +13,30 @@ function Profile(props) {
     <>
       <div>
         <h1>Hey {props.currentUser.name}</h1>
-        {/* <br />
         <br />
+        
+        <h3>Here is your personal information:</h3>
+        <br />
+        
+        <p><strong>User Name:</strong>{props.currentUser.name}</p>
+        <p><strong>Email:</strong>{props.currentUser.email}</p>
+        <p><strong>Amount paid:</strong> 25&euro;</p>
+        <p><strong>Amount received:</strong> 35&euro;</p>
+      </div>
+      <br />
 
-        <h3> Booked Tasks:</h3>
         <br />
-        <br />
+        <h3> Your booked Tasks:</h3>
+        
         <div className={styles.buttons__con}>
           <Link href="/keeper/tasks/booked">Booked Tasks</Link>
         </div>
-        <h3> Created Tasks:</h3>
         <br />
-        <br />
+        <h3> Your created Tasks:</h3>
+        
         <div className={styles.buttons__con}>
           <Link href="/taker/tasks/">My Tasks</Link>
-        </div> */}
-        <p>Email: {props.currentUser.email}</p>
-        <p>Amount paid: 25&euro;</p>
-        <p>Amount recieved: 35&euro;</p>
-      </div>
+        </div>
       <div className={styles.btn__con}>
           <button onClick={() => signOut()}>Sign out</button>
         </div>
