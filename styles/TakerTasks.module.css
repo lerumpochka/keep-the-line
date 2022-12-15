@@ -2,6 +2,12 @@
 
 .container {
   width: 100%;
+  padding-bottom: 4rem;
+}
+.container > .head__h1 {
+  font-family: "Roboto Condensed", sans-serif;
+  color: #373f44;
+  padding: 0.4rem 1.2rem;
 }
 
 .text__con {

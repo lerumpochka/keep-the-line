@@ -1,11 +1,9 @@
-
-
 import React from "react";
 import Progress from "../../../components/Progress";
 import db from "../../../database";
 import { getSession } from "next-auth/react";
-
-
+import { style } from "@mui/system";
+import styles from "../../../styles/TaskCard.module.css";
 
 function TakerTaskDetails(props) {
   const task = props.task;
@@ -13,23 +11,45 @@ function TakerTaskDetails(props) {
 
   const handleClick = async () => {
     alert(`task with id: ${task.id} was deleted`);
-    setTimeout(()=>{
-      location.assign("/taker/tasks")
-    }, 2000)
+    setTimeout(() => {
+      location.assign("/taker/tasks");
+    }, 2000);
     await fetch(`/api/tasks/${task.id}`, {
-      method: 'DELETE'
-    })
-  }
+      method: "DELETE",
+    });
+  };
 
   return (
     <div>
-      <h1> Task Details/Communication:</h1>
-      <p>
-        task id: {task.id} task title: {task.title}, where: {task.address}
-      </p>
-      <Progress progress={task.progress}/>
+      <h1 className={styles.communicate}>Progress</h1>
+      <div className={styles.container}>
+        <h2>{task.title}</h2>
+        <p>{task.description}</p>
+        <p>{task.address}</p>
+        <p>
+          {task.date}
+          <span>{task.time}</span>
+        </p>
+        {task.amount && <p>amount:{task.amount} &euro;</p>}
+      </div>
+      <Progress progress={task.progress} />
 
-      <button onClick={handleClick}>Cancel Task</button>
+      <button
+        style={{
+          padding: "10px 20px",
+          borderRadius: "25px",
+          border: "none",
+          fontSize: "1rem",
+          textTransform: "uppercase",
+          color: "white",
+          backgroundColor: "#373f44",
+          fontWeight: "bold",
+          marginLeft: "1rem",
+        }}
+        onClick={handleClick}
+      >
+        Cancel Task
+      </button>
     </div>
   );
 }
@@ -49,14 +69,5 @@ export async function getServerSideProps(req, res) {
     props: { task },
   };
 }
-
-
-
-
-
-
-
-
-
 
 export default TakerTaskDetails;
