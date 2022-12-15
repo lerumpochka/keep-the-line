@@ -4,7 +4,6 @@ import { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import Fade from "react-reveal/Fade";
 import Link from "next/link";
-import { signOut } from "next-auth/react";
 import Image from "next/image";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
