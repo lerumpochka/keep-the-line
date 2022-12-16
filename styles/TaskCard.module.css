@@ -25,3 +25,9 @@ a.link {
   font-size: 1.2rem;
   font-family: "Roboto", sans-serif;
 }
+.communicate {
+  font-family: "Roboto Condensed", "Roboto", sans-serif;
+  color: #2d3336;
+  font-size: 1.7rem;
+  margin: 1.2rem 0.8rem;
+}

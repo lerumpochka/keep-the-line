@@ -7,7 +7,6 @@ import db from "../../../database";
 function Task(props) {
   const task = props.task;
   const user = props.user;
-  console.log("user", user);
   return (
     <div>
       <TaskCard
@@ -58,7 +57,6 @@ export async function getServerSideProps(req, res) {
   const task = await taskController.find(id);
 
   const session = await getSession(req);
-  console.log("session", session);
   if (!session) {
     return {
       redirect: {

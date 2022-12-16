@@ -8,9 +8,7 @@ export default async function handler(req, res) {
     try {
         let task = await db.Task.findByPk(id)
 
-        console.log('-------here---',task);
         task = await task.update(progress);
-        console.log('------- upd---',task);
 
         res.status(200).json(task);
     } catch (error) {

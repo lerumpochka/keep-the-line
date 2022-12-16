@@ -5,17 +5,27 @@ module.exports = {
   async up (queryInterface, Sequelize) {
     
      await queryInterface.bulkInsert('Bookings', [{
-        UserId: 2,
+        UserId: 1,
         TaskId: 1,
         statusArrival: true,
-        statusTime: 20,
         statusDone: true,
         cancel: false,
         createdAt: new Date(),
         updatedAt: new Date()
 
 
-     }], {});
+     },
+     {
+      UserId: 1,
+      TaskId: 2,
+      statusArrival: true,
+      statusDone: true,
+      cancel: false,
+      createdAt: new Date(),
+      updatedAt: new Date()
+
+
+   }], {});
 
   },
 

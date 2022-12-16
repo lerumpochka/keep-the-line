@@ -4,34 +4,25 @@ import React from "react";
 import TaskCardOne from "../../../../components/TaskCardOne";
 // import db from "../../../../database";
 import db from "../../../../database";
+import styles from "../../../../styles/TakerTasks.module.css";
 
 function bookedTasks(props) {
   const bookings = props.bookings;
   const tasks = bookings.map((booking) => booking.Task);
-  console.log(tasks);
   return (
-    <div>
-      <h1 style={{ fontFamily: "Roboto Condensed", color: "#373f44", margin: "0px auto" }}>
-        Booked Tasks
-      </h1>
+    <div className={styles.container}>
+      <h1 className={styles.head__h1}>Booked Tasks</h1>
       {tasks.map((task) => (
-        <Link
+        <TaskCardOne
           key={task.id}
-          style={{ textDecoration: "none" }}
-          href={`/keeper/tasks/booked/${task.id}`}
-        >
-
-          <TaskCardOne
-            key={task.id}
-            id={task.id}
-            title={task.title}
-            description={task.description}
-            address={task.address}
-            amount={task.amount}
-            date={task.date}
-            time={task.time}
-          />
-        </Link>
+          id={task.id}
+          title={task.title}
+          description={task.description}
+          address={task.address}
+          amount={task.amount}
+          date={task.date}
+          time={task.time}
+        />
       ))}
     </div>
   );

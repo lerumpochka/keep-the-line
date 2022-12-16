@@ -3,41 +3,40 @@ import Link from "next/link";
 import React from "react";
 import db from "../../database";
 import styles from "../../styles/Profile.module.css";
+import { signOut } from "next-auth/react";
 
 // import db from "../../database";
 
 function Profile(props) {
-  console.log(props.currentUser);
   return (
-    <>
-      <div>
-        <h1>Hey {props.currentUser.name}</h1>
-        {/* <br />
-        <br />
+    <div className={styles.container}>
+      <h1>Hey {props.currentUser.name}</h1>
+      <p>Email: {props.currentUser.email}</p>
+      <p>Amount paid: 25&euro;</p>
+      <p>Amount recieved: 35&euro;</p>
 
-        <h3> Booked Tasks:</h3>
-        <br />
-        <br />
-        <div className={styles.buttons__con}>
-          <Link href="/keeper/tasks/booked">Booked Tasks</Link>
-        </div>
-        <h3> Created Tasks:</h3>
-        <br />
-        <br />
-        <div className={styles.buttons__con}>
-          <Link href="/taker/tasks/">My Tasks</Link>
-        </div> */}
-        <p>Email: {props.currentUser.email}</p>
-        <p>Amount paid: 25&euro;</p>
-        <p>Amount recieved: 35&euro;</p>
+      <div>
+        <button
+          style={{
+            padding: "10px 20px",
+            marginTop: "2rem",
+            marginLeft: "20px",
+            borderRadius: "5px",
+            backgroundColor: "rgba(223, 0, 0, 0.796)",
+            border: "none",
+            color: "white",
+          }}
+          onClick={() => signOut()}
+        >
+          SignOut
+        </button>
       </div>
-    </>
+    </div>
   );
 }
 
 export async function getServerSideProps(req, res) {
   const session = await getSession(req);
-  //console.log(session.user.email)
   if (!session) {
     return {
       redirect: {
