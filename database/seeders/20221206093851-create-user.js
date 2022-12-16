@@ -7,7 +7,7 @@ module.exports = {
      await queryInterface.bulkInsert('Tasks', [{
         title: 'Poste Italiane',
         description: 'fare lo SPID',
-        address: 'via Roma, 26',
+        address: 'Corso Racconigi, 43, 10139 Torino TO',
         UserId: 1,
         amount: 5,
         date: new Date('2022 December 10'),
@@ -18,9 +18,9 @@ module.exports = {
 
      },
      {
-      title: 'Unicredit Bank',
-      description: 'aprire conto corrente',
-      address: 'via Venetto, 10',
+      title: 'Banca Intesa SanPaolo',
+      description: 'aprire un conto corrente',
+      address: 'P.za Barberini, 21, 00187 Roma RM',
       UserId: 1,
       amount: 5,
       date: new Date('2022 December 20'),
@@ -30,8 +30,8 @@ module.exports = {
    },
    {
       title: 'Anagrafe',
-      description: 'cambiare la residenza ',
-      address: 'via Mateotti, 14',
+      description: 'cambiare residenza ',
+      address: 'Via Montevecchio, 29, 09121 Cagliari CA',
       UserId: 1,
       amount: 6,
       date: new Date('2022 December 20'),
