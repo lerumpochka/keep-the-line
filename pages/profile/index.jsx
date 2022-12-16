@@ -11,9 +11,12 @@ function Profile(props) {
   return (
     <div className={styles.container}>
       <h1>Hey {props.currentUser.name}</h1>
-      <p>Email: {props.currentUser.email}</p>
-      <p>Amount paid: 25&euro;</p>
-      <p>Amount recieved: 35&euro;</p>
+      <h3>Here is your personal information:</h3>
+      <p><strong>User Name: </strong>{props.currentUser.name}</p>
+        <p><strong>Email: </strong>{props.currentUser.email}</p>
+        <p><strong>Amount paid: </strong> 25&euro;</p>
+        <p><strong>Amount received: </strong> 35&euro;</p>
+
 
       <div>
         <button
